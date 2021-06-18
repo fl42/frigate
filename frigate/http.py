@@ -98,7 +98,7 @@ def create_app(frigate_config, database: SqliteDatabase, stats_tracking, detecte
     app.detected_frames_processor = detected_frames_processor
 
     app.register_blueprint(bp)
-    sockets.register_blueprint(ws)
+    # sockets.register_blueprint(ws)
 
     app.mqtt_backend = MqttBackend(mqtt_client, frigate_config.mqtt.topic_prefix)
     app.mqtt_backend.start()
